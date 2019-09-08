@@ -1,38 +1,40 @@
 import sys
 import string
 def palindrome(x):
+    """
+    """
 
-    s = str(x)
-    z = ""
+    number = str(x)
+    reverse = ""
     n = False
-    for i in s:
+    for i in number:
         if i in string.punctuation:
             n = True
         else:
-            z = i + z
-    if int(z) <= 2147483647 and int(z) >= -2147483647:
+            reverse = i + reverse
+    if int(reverse) <= 2147483647 and int(reverse) >= -2147483647:
         if n == True:
-            z = int(z) * -1
-        elif z == "":
-            z = "0" + z
-        elif len(z)>1 and z[0]=="0":
-            z = z[1:]
-            z = "0" + z       
+            reverse = int(reverse) * -1
+        elif reverse == "":
+            reverse = "0" + reverse
+        elif len(reverse)>1 and reverse[0]=="0":
+            reverse = reverse[1:]
+            reverse = "0" + reverse       
         else:
             pass
     else:
         return 0
 
-    if z == s:
+    if reverse == number:
         return True
     else:
         return False
 
 
 def main():
-    x = 121
+    x = 262
     test = palindrome(x)
-    print test
+    print(test)
 
 if __name__ == '__main__':
     main()
